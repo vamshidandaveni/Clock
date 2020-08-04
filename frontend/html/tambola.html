@@ -1,0 +1,89 @@
+<html>
+   <head>  
+    <link rel="stylesheet" href="/css/tambola.css"/>
+   </head>
+   <body>
+         <h1><center> <em>TAMBOLA</em></center></h1>
+         <table id="tambola" width="28%">
+           <tr>
+             <td>
+               <div id="board"></div>
+             </td>
+             <td align="right"></td>
+            </tr>
+         </table>
+        <p></p> <h4 align="left"> Previous Number : </h4> <p id="prenumber"> </p> </p>
+
+        
+              <h1><font size="30" id="number"></font></h1>
+              
+              <input id="number"type="button" name="next" value="NEXT NUMBER" title= "Press this to get next number" onClick="generatenum();"></input>
+              <input id="reset" type="button" name="Reset" value="RESET GAME" title= "Press this to restart the Game" onClick="clean();"></input>
+         
+          <script>
+            var array = new Array();
+            var array2= new Array();
+            var prenum="";
+            for(i=1;i<=90;i++) array2.push(i);
+
+            if (sessionStorage.length != 0){
+                for(i=0;i<=90;i++){
+                    if(sessionStorage.getItem(i) != null) {
+                        array.push(i);
+                        var index = array2.indexOf(i);
+                        array2.splice(index, 1);
+                    }
+                }
+                document.getElementById('number').innerHTML=sessionStorage.key(0);
+                document.getElementById('prenumber').innerHTML=sessionStorage.key(1);
+                prenum=sessionStorage.key(1);
+            }
+            
+            function clean(){
+                sessionStorage.clear();
+                array.splice(0,array.length);
+                array2.splice(0,array2.length);
+                for(i=1;i<=90;i++){
+                    array2.push(i);
+                }
+                recreatetable(0);
+                document.getElementById('number').innerHTML="";
+                document.getElementById('prenumber').innerHTML="";
+                prenum="none";
+            }
+            
+            function generatenum(){
+                var num = array2[Math.floor(Math.random() * array2.length)];
+                document.getElementById('number').innerHTML=num;
+                document.getElementById('prenumber').innerHTML=prenum;
+                recreatetable(num);
+                prenum=num;
+            }
+            
+            function recreatetable(addkey) {
+                   
+                var boardhtml = "<table border='1'>";
+                   if(addkey != '0'){
+                   array.push(addkey);
+                   sessionStorage.setItem(addkey,"done");
+                   var index = array2.indexOf(addkey);
+                   array2.splice(index, 1);
+                   }
+                   for(i=1;i<=90;i++){
+                       if(i%10==1) boardhtml += "<tr>";
+                   if(array.indexOf(i) > -1){
+                        boardhtml += "<td bgcolor='red' id='td" + i + "'><font size='6'>" + i + "</font></td>";
+                   } else {
+                        boardhtml += "<td id='td" + i + "'><font size='6'>" + i + "</font></td>";
+                   }
+                   if(i==30 || i==60 || i==90){       
+                    boardhtml += "</tr>";
+                   }
+                  }
+                boardhtml += "</table>";
+                document.getElementById('board').innerHTML=boardhtml;
+            }
+            recreatetable(0);
+            </script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+#reset
+{
+    margin-top: 50px;
+    margin-left: 1200px;
+    border-width: 5px;
+    border-style: grooves;
+    background-color: yellow;
+    text-decoration-style: dotted;
+}
+
+#number
+{
+    margin-top: 50px;
+    margin-left: 300px;
+    border-width: 5px;
+    border-style: grooves;
+    text-decoration-style: dotted;
+}
+
+#tambola
+{
+    margin-left:500px;
+    border-width: 10px;
+    border-style: grooves;
+    border-color: tomato;
+    background-color: rgb(241, 241, 75);
+    text-decoration-style: dotted;
+}
