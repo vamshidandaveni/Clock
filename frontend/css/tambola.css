@@ -1,3 +1,9 @@
+#bg
+{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 #reset
 {
     margin-top: 50px;
@@ -20,9 +26,9 @@
 #tambola
 {
     margin-left:500px;
-    border-width: 10px;
+    border-width: 20px;
     border-style: grooves;
-    border-color: tomato;
-    background-color: rgb(241, 241, 75);
+    border-color: rgb(71, 203, 255);
+    
     text-decoration-style: dotted;
 }

@@ -3,7 +3,8 @@
     <link rel="stylesheet" href="/css/tambola.css"/>
    </head>
    <body>
-         <h1><center> <em>TAMBOLA</em></center></h1>
+        <div id="bg" style="background-image: url('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg');"> 
+         <h1 style="color: aqua;"><center> <em>TAMBOLA</em></center></h1>
          <table id="tambola" width="28%">
            <tr>
              <td>
@@ -72,7 +73,7 @@
                    for(i=1;i<=90;i++){
                        if(i%10==1) boardhtml += "<tr>";
                    if(array.indexOf(i) > -1){
-                        boardhtml += "<td bgcolor='red' id='td" + i + "'><font size='6'>" + i + "</font></td>";
+                        boardhtml += "<td bgcolor='grey'  id='td" + i + "'><font size='6'>" + i + "</font></td>";
                    } else {
                         boardhtml += "<td id='td" + i + "'><font size='6'>" + i + "</font></td>";
                    }
