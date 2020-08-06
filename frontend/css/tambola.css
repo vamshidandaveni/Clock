@@ -26,8 +26,8 @@
 #tambola
 {
     margin-left:500px;
-    border-width: 20px;
-    border-style: grooves;
+    border-width: 10px;
+    border-style: solid;
     border-color: rgb(71, 203, 255);
     
     text-decoration-style: dotted;
