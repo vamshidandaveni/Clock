@@ -1,13 +1,20 @@
 <html>
    <head>  
     <link rel="stylesheet" href="/css/tambola.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
    </head>
    <body>
         <div id="bg" style="background-image: url('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg');"> 
-        <div>
+        
             <h1 style="color: aqua; margin-left:60px;"><center> <em>TAMBOLA</em></center></h1>  
-            
-            <p><h4 > Previous Number : </h4> <p id="prenumber"></p> </p>
+    
+        <div>
+            <p><h4 style="font-size: x-large; color:white"> Previous Number : </h4>
+                 <p id="prenumber" style="font-size: x-large; color:white"></p>
+            </p>
+        </div>
+        <div>
             <table id="tambola" width="30%">
               <tr>
               <td>
@@ -17,14 +24,17 @@
               </tr>
             </table>
         </div>
-     
+        <div>
+            <input id="number1"type="button" name="next" value="NEXT NUMBER" title= "Press this to get next number" onClick="generatenum();"></input>
+            <p><font id="number" style="font-size:xx-large; color:white; margin-left:100px" ></font></p>
+        </div>
+    
+        <br> <br> <br> <br> <br> <br>
+        <input id="reset" type="button" name="Reset" value="RESET GAME" title= "Press this to restart the Game" onClick="clean();"></input>
+        <br> <br> <br>
 
-        
-              <p><font size="30" id="number"></font></p>
-              
-              <input id="number"type="button" name="next" value="NEXT NUMBER" title= "Press this to get next number" onClick="generatenum();"></input>
-              <input id="reset" type="button" name="Reset" value="RESET GAME" title= "Press this to restart the Game" onClick="clean();"></input>
-         
+        <a href="/" class="fa fa-home" margin-left:10px style="color:yellow" >  Click</a> <br> <br> <br>
+    
           <script>
             var array = new Array();
             var array2= new Array();

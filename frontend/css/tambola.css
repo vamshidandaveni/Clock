@@ -1,3 +1,6 @@
+div {
+    float: left;
+    }
 #bg
 {
     background-repeat: no-repeat;
@@ -14,21 +17,24 @@
     text-decoration-style: dotted;
 }
 
-#number
-{
-    margin-top: 50px;
-    
+#number1
+{   margin-left: 100px;
     border-width: 5px;
     border-style: grooves;
+    background-color: yellow;
     text-decoration-style: dotted;
 }
 
 #tambola
 {
-    margin-left:500px;
+    margin-left: 300px;
     border-width: 10px;
     border-style: solid;
     border-color: rgb(71, 203, 255);
-    
     text-decoration-style: dotted;
+}
+
+td
+{ 
+    color:white;
 }
